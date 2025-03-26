@@ -99,42 +99,52 @@
             <!-- Low Stock Alert Table -->
             <div class="bg-white p-6 mt-6 rounded-lg shadow mb-10">
                 <h3 class="text-lg font-semibold mb-4">Low Stock Alert</h3>
-                <table class="w-full border-collapse border">
-                    <thead>
-                        <tr class="bg-gray-200">
-                            <th class="border px-4 py-2">No</th>
-                            <th class="border px-4 py-2">Name</th>
-                            <th class="border px-4 py-2">Minimum Stock</th>
-                            <th class="border px-4 py-2">Quantity</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="border px-4 py-2">01</td>
-                            <td class="border px-4 py-2">Panadol Advance 500mg</td>
-                            <td class="border px-4 py-2">20</td>
-                            <td class="border px-4 py-2">15</td>
-                        </tr>
-                        <tr>
-                            <td class="border px-4 py-2">02</td>
-                            <td class="border px-4 py-2">A&D Medical UA Blood Monitor</td>
-                            <td class="border px-4 py-2">20</td>
-                            <td class="border px-4 py-2">15</td>
-                        </tr>
-                        <tr>
-                            <td class="border px-4 py-2">03</td>
-                            <td class="border px-4 py-2">MILKON 3-Ply Face Mask</td>
-                            <td class="border px-4 py-2">20</td>
-                            <td class="border px-4 py-2">15</td>
-                        </tr>
-                        <tr>
-                            <td class="border px-4 py-2">04</td>
-                            <td class="border px-4 py-2">Neutrovis 4Ply Face Mask</td>
-                            <td class="border px-4 py-2">20</td>
-                            <td class="border px-4 py-2">15</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-gray-50 border-b border-gray-200">
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Minimum Stock</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">01</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Panadol Advance 500mg</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">20</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">15</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">02</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">A&D Medical UA Blood Monitor</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">20</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">15</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">03</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">MILKON 3-Ply Face Mask</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">20</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">15</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">04</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Neutrovis 4Ply Face Mask</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">20</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">15</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
     </div>
