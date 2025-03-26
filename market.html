@@ -133,8 +133,9 @@
       </div>
     </div>
     <script>
+      const basePath = window.location.pathname.split('/').slice(0, 2).join('/');
       const items = Array.from({ length: 11 }, (_, i) => ({
-        image: '/img/item.jpeg',
+        image: basePath + '/img/item.jpeg',
         name: `Bionerv 10s x${i + 1}`,
         category: 'Supplement',
         price: `RM${100 + i * 10}.00`,
