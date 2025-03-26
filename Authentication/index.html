@@ -47,6 +47,7 @@
 
 <script>
     function redirectToDashboard() {
-        window.location.href = "../dashboard.html";
+        let basePath = window.location.pathname.split('/').slice(0, 2).join('/');
+        window.location.href = basePath + "/dashboard.html";
     }
 </script>
