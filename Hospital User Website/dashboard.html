@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.0.0/iconify.min.js"></script>
+</head>
+<body class="h-screen bg-gray-100">
+
+    <!-- Dashboard Grid -->
+    <div class="grid grid-rows-[10%_90%] grid-cols-[20%_80%] h-full w-full">
+
+        <!-- Header Left (Logo) -->
+        <div class="bg-[#7F63F4] flex items-center text-white font-bold text-xl pl-3">
+            <img src="/img/logo.jpg" alt="DikCare Logo" class="h-10 w-10 mr-3 rounded-lg">
+            DikCare
+        </div>
+
+        <!-- Header Right (Search, Icons, Profile) -->
+        <div class="bg-white flex items-center justify-between shadow-md pl-5 pr-5">
+            <!-- Search Bar -->
+            <input type="text" placeholder="Search..." class="border border-gray-300 px-4 py-2 w-1/3 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            
+            <!-- Icons & Profile -->
+            <div class="flex items-center space-x-4">
+                <span class="iconify text-2xl text-gray-600 cursor-pointer" data-icon="mdi:bell-outline"></span>
+                <span class="iconify text-2xl text-gray-600 cursor-pointer" data-icon="mdi:email-outline"></span>
+                
+                <!-- Profile -->
+                <div class="flex items-center space-x-2 cursor-pointer">
+                    <img src="/img/userLogo.jpg" alt="User" class="h-8 w-8 rounded-full border border-gray-300">
+                    <span class="text-gray-700 font-semibold">Brendan</span>
+                    <span class="iconify text-xl text-gray-600" data-icon="mdi:chevron-down"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar Navigation (20% width) -->
+        <div class="bg-white flex flex-col text-gray-700 font-semibold">
+            <!-- Navigation Title -->
+            <div class="text-lg p-4">Navigation</div>
+
+            <!-- Navigation Links -->
+            <div class="flex flex-col">
+                <a href="#" class="flex items-center px-4 py-3 hover:bg-gray-200">
+                    <span class="iconify text-xl mr-3" data-icon="mdi:view-dashboard-outline"></span> Dashboard
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 hover:bg-gray-200">
+                    <span class="iconify text-xl mr-3" data-icon="mdi:shopping-outline"></span> Market
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 hover:bg-gray-200">
+                    <span class="iconify text-xl mr-3" data-icon="mdi:account-outline"></span> Profile
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 hover:bg-gray-200">
+                    <span class="iconify text-xl mr-3" data-icon="mdi:cog-outline"></span> Setting
+                </a>
+            </div>
+
+            <!-- Logout Button -->
+            <div class="mt-auto border-t border-gray-300">
+                <a href="#" class="flex items-center px-4 py-3 text-red-500 hover:bg-red-100">
+                    <span class="iconify text-xl mr-3" data-icon="mdi:logout"></span> Log Out
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content Right (80% width) -->
+        <div class="bg-[#F3F6F9] flex items-center justify-center">
+            <h2 class="text-xl font-bold text-gray-700">Section 2</h2>
+        </div>
+
+    </div>
+
+</body>
+</html>
