@@ -62,7 +62,7 @@
         </a>
 
         <div class="mt-auto border-t border-gray-300">
-          <a href="${basePath}/Authentication/index.html" class="flex items-center px-4 py-3 text-red-500 hover:bg-red-100">
+          <a href="/Authentication/" class="flex items-center px-4 py-3 text-red-500 hover:bg-red-100">
             <span class="iconify text-xl mr-3" data-icon="mdi:logout"></span>
             Log Out
           </a>
@@ -241,6 +241,12 @@
                 img.src = basePath + img.getAttribute("src");
             }
         });
+
+        // Update logout href
+        const logoutLink = document.querySelector('a[href="/Authentication/"]');
+        if (logoutLink) {
+            logoutLink.href = basePath + '/Authentication/index.html';
+        }
 
         // Update background image dynamically
         let bgElement = document.querySelector(".bg-login");
