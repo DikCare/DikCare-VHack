@@ -249,6 +249,12 @@
             }
         });
 
+        // Update logout href
+        const logoutLink = document.querySelector('a[href="/Authentication/"]');
+        if (logoutLink) {
+            logoutLink.href = basePath + '/Authentication/index.html';
+        }
+
         // Update background image dynamically
         let bgElement = document.querySelector(".bg-login");
         if (bgElement) {
