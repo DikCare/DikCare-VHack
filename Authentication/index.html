@@ -8,26 +8,34 @@
 </head>
 <body class="bg-login bg-gray-100 h-screen relative">
 
-    <!-- Left Container -->
-    <div class="absolute left-0 top-0 h-full w-2/5 bg-white bg-opacity-90 p-8 flex flex-col justify-between shadow-lg">
+    <!-- Left Container - Made responsive with md: breakpoint -->
+    <div class="absolute md:left-0 top-0 h-full w-full md:w-2/5 bg-white bg-opacity-90 p-4 md:p-8 
+                flex flex-col justify-between shadow-lg">
 
-        <!-- Logo & Title -->
-        <div class="flex items-center space-x-3">
-            <img src="/img/logo.jpg" alt="DikCare Logo" class="h-12 rounded-lg">
-            <h1 class="text-3xl font-bold text-blue-500">DikCare</h1>
+        <!-- Logo & Title - Centered on mobile -->
+        <div class="flex items-center justify-center md:justify-start space-x-3">
+            <img src="/img/logo.jpg" alt="DikCare Logo" class="h-10 md:h-12 rounded-lg">
+            <h1 class="text-2xl md:text-3xl font-bold text-blue-500">DikCare</h1>
         </div>
 
-        <!-- Sign-in Form -->
-        <div class="flex flex-col space-y-6">
-            <h2 class="text-2xl font-semibold text-gray-700">Sign in</h2>
-            <input type="email" placeholder="Email" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-            <input type="password" placeholder="Password" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-            <button onclick="redirectToDashboard()" class="w-full bg-blue-500 text-white py-3 rounded-md hover:bg-blue-600 transition">Login</button>
+        <!-- Sign-in Form - Adjusted spacing for mobile -->
+        <div class="flex flex-col space-y-4 md:space-y-6 mt-8 md:mt-0">
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-700 text-center md:text-left">Sign in</h2>
+            <input type="email" 
+                   placeholder="Email" 
+                   class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <input type="password" 
+                   placeholder="Password" 
+                   class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <button onclick="redirectToDashboard()" 
+                    class="w-full bg-blue-500 text-white py-3 rounded-md hover:bg-blue-600 transition">
+                Login
+            </button>
             <a href="#" class="text-blue-500 text-sm text-center hover:underline">Forgot password?</a>
         </div>
 
-        <!-- Footer Links -->
-        <div class="text-center text-sm text-gray-600">
+        <!-- Footer Links - Adjusted spacing for mobile -->
+        <div class="text-center text-sm text-gray-600 mt-8 md:mt-0">
             <a href="#" class="hover:underline">Terms and Conditions</a> • 
             <a href="#" class="hover:underline">Privacy Policy</a>
         </div>
@@ -43,6 +51,27 @@
     background-size: cover;
     background-position: center;
 }
+
+/* Add media query for mobile background */
+@media (max-width: 768px) {
+    .bg-login {
+        background-image: none;
+        background-color: #f3f4f6;
+    }
+}
+
+/* Add touch-friendly adjustments */
+@media (max-width: 768px) {
+    input, button {
+        font-size: 16px; /* Prevents iOS zoom on input focus */
+        min-height: 44px; /* Minimum touch target size */
+    }
+    
+    a {
+        padding: 8px 0; /* Larger touch target for links */
+        display: inline-block;
+    }
+}
 </style>
 
 <script>
@@ -50,6 +79,7 @@
         let basePath = window.location.pathname.split('/').slice(0, 2).join('/');
         window.location.href = basePath + "/dashboard.html";
     }
+    
     document.addEventListener("DOMContentLoaded", function() {
         let basePath = window.location.pathname.split('/').slice(0, 2).join('/');
 
@@ -62,7 +92,7 @@
 
         // Update background image dynamically
         let bgElement = document.querySelector(".bg-login");
-        if (bgElement) {
+        if (bgElement && window.innerWidth > 768) { // Only set background on non-mobile
             bgElement.style.backgroundImage = `url('${basePath}/img/loginImg.png')`;
         }
     });
