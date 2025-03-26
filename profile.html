@@ -209,6 +209,23 @@
             </div>
         </div>
     </div>
-    
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        let basePath = window.location.pathname.split('/').slice(0, 2).join('/');
+
+        // Update image paths dynamically
+        document.querySelectorAll("img").forEach(img => {
+            if (img.getAttribute("src").startsWith("/")) {
+                img.src = basePath + img.getAttribute("src");
+            }
+        });
+
+        // Update background image dynamically
+        let bgElement = document.querySelector(".bg-login");
+        if (bgElement) {
+            bgElement.style.backgroundImage = `url('${basePath}/img/loginImg.png')`;
+        }
+    });
+    </script>
   </body>
 </html>
