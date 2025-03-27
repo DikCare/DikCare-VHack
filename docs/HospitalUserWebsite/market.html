@@ -166,7 +166,10 @@
         // Update images
         element.querySelectorAll("img").forEach(img => {
           if (img.getAttribute("src").startsWith("/")) {
-            img.src = basePath + img.getAttribute("src");
+            // Remove any duplicate repository name in the path
+            const src = img.getAttribute("src");
+            const cleanSrc = src.replace(/\/DikCare-VHack\/DikCare-VHack/, '/DikCare-VHack');
+            img.src = basePath + cleanSrc;
           }
         });
 
@@ -184,7 +187,7 @@
       });
 
       const items = Array.from({ length: 11 }, (_, i) => ({
-        image: '/HospitalUserWebsite/img/item.jpeg',  // Update base path here
+        image: '/HospitalUserWebsite/img/item.jpeg',  // This path will be corrected by updatePaths function
         name: `Bionerv 10s x${i + 1}`,
         category: 'Supplement',
         price: `RM${100 + i * 10}.00`,
