@@ -153,8 +153,38 @@
 
     <script>
       const basePath = window.location.pathname.split('/').slice(0, 2).join('/');
+      
+      // Function to update paths for an element and its children
+      function updatePaths(element) {
+        // Update links
+        element.querySelectorAll("a").forEach(link => {
+          if (link.getAttribute("href").startsWith("/")) {
+            link.href = basePath + link.getAttribute("href");
+          }
+        });
+
+        // Update images
+        element.querySelectorAll("img").forEach(img => {
+          if (img.getAttribute("src").startsWith("/")) {
+            img.src = basePath + img.getAttribute("src");
+          }
+        });
+
+        // Update logout link specifically
+        const logoutLink = element.querySelector('a[href="/Authentication"]');
+        if (logoutLink) {
+          logoutLink.href = basePath + '/Authentication/index.html';
+        }
+      }
+
+      // Update paths when DOM is loaded
+      document.addEventListener("DOMContentLoaded", function() {
+        // Update static content
+        updatePaths(document);
+      });
+
       const items = Array.from({ length: 11 }, (_, i) => ({
-        image: basePath + '/img/item.jpeg',
+        image: basePath + '/img/item.jpeg',  // Update base path here
         name: `Bionerv 10s x${i + 1}`,
         category: 'Supplement',
         price: `RM${100 + i * 10}.00`,
@@ -273,6 +303,10 @@
             `;
           }
         }
+
+        // Update paths for newly added content
+        updatePaths(table);
+        updatePaths(cardsContainer);
       }
 
       function createPagination(items, tableId) {
@@ -316,37 +350,6 @@
         createPagination(items, 'item-table');
         createPagination(items, 'stock-table');
       });
-      document.addEventListener("DOMContentLoaded", function() {
-        let basePath = window.location.pathname.split('/').slice(0, 2).join('/');
-
-        document.querySelectorAll("a").forEach(link => {
-            if (link.getAttribute("href").startsWith("/")) {
-                link.href = basePath + link.getAttribute("href");
-            }
-        });
-    });
-    document.addEventListener("DOMContentLoaded", function() {
-        let basePath = window.location.pathname.split('/').slice(0, 2).join('/');
-
-        // Update image paths dynamically
-        document.querySelectorAll("img").forEach(img => {
-            if (img.getAttribute("src").startsWith("/")) {
-                img.src = basePath + img.getAttribute("src");
-            }
-        });
-
-        // Update logout href
-        const logoutLink = document.querySelector('a[href="/HospitalUserWebsite/Authentication"]');
-        if (logoutLink) {
-            logoutLink.href = basePath + '/Authentication/index.html';
-        }
-
-        // Update background image dynamically
-        let bgElement = document.querySelector(".bg-login");
-        if (bgElement) {
-            bgElement.style.backgroundImage = `url('${basePath}/img/loginImg.png')`;
-        }
-    });
     </script>
   </body>
 </html>
