@@ -14,7 +14,7 @@
 
         <!-- Logo & Title - Centered on mobile -->
         <div class="flex items-center justify-center md:justify-start space-x-3">
-            <img src="/HospitalUserWebsite/img/logo.jpg" alt="DikCare Logo" class="h-10 md:h-12 rounded-lg">
+            <img src="/DikCare-VHack/HospitalUserWebsite/img/logo.jpg" alt="DikCare Logo" class="h-10 md:h-12 rounded-lg">
             <h1 class="text-2xl md:text-3xl font-bold text-blue-500">DikCare</h1>
         </div>
 
@@ -47,7 +47,7 @@
 
 <style>
 .bg-login {
-    background-image: url('/HospitalUserWebsite/img/loginImg.png');
+    background-image: url('/DikCare-VHack/HospitalUserWebsite/img/loginImg.png');
     background-size: cover;
     background-position: center;
 }
@@ -76,7 +76,7 @@
 
 <script>
     function redirectToDashboard() {
-        window.location.href = "/HospitalUserWebsite/dashboard.html";
+        window.location.href = "/DikCare-VHack/HospitalUserWebsite/dashboard.html";
     }
     
     document.addEventListener("DOMContentLoaded", function() {
@@ -90,7 +90,7 @@
         // Update background image dynamically
         let bgElement = document.querySelector(".bg-login");
         if (bgElement && window.innerWidth > 768) { // Only set background on non-mobile
-            bgElement.style.backgroundImage = `url('/HospitalUserWebsite/img/loginImg.png')`;
+            bgElement.style.backgroundImage = `url('/DikCare-VHack/HospitalUserWebsite/img/loginImg.png')`;
         }
     });
 </script>
