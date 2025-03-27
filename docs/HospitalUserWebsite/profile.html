@@ -239,38 +239,36 @@
         }
       });
 
-      // Your existing DOMContentLoaded script
+      // Combined path handling for GitHub Pages
       document.addEventListener("DOMContentLoaded", function() {
         let basePath = window.location.pathname.split('/').slice(0, 2).join('/');
 
+        // Update all links
         document.querySelectorAll("a").forEach(link => {
             if (link.getAttribute("href").startsWith("/")) {
                 link.href = basePath + link.getAttribute("href");
             }
         });
-    });
-    document.addEventListener("DOMContentLoaded", function() {
-        let basePath = window.location.pathname.split('/').slice(0, 2).join('/');
 
-        // Update image paths dynamically
+        // Update all images
         document.querySelectorAll("img").forEach(img => {
             if (img.getAttribute("src").startsWith("/")) {
                 img.src = basePath + img.getAttribute("src");
             }
         });
 
-        // Update logout href
+        // Update logout href specifically
         const logoutLink = document.querySelector('a[href="/HospitalUserWebsite/Authentication"]');
         if (logoutLink) {
             logoutLink.href = basePath + '/Authentication/index.html';
         }
 
-        // Update background image dynamically
+        // Update background image if exists
         let bgElement = document.querySelector(".bg-login");
         if (bgElement) {
             bgElement.style.backgroundImage = `url('${basePath}/img/loginImg.png')`;
         }
-    });
+      });
     </script>
   </body>
 </html>
